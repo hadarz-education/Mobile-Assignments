@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         // Reference to the "Add Student" button
         val addStudentButton: Button = findViewById(R.id.main_acitivity_add_student_button)
+        Log.d("MainActivity", "heyyyyyyyyyyyyyyyyyyy")
 
         // Set the click listener
         addStudentButton.setOnClickListener {
+            Log.d("MainActivity", "hilaaaaaaaaaaa")
             // Create an Intent to navigate to StudentsListActivity
             val intent = Intent(this, AddStudentActivity::class.java)
             startActivity(intent)
