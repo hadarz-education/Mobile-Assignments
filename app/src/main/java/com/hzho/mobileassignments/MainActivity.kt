@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val intent = Intent(this, StudentsListActivity::class.java)
+        val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
         startActivity(intent)
 
         // Reference to the "Add Student" button
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // Set the click listener
         addStudentButton.setOnClickListener {
             // Create an Intent to navigate to StudentsListActivity
-            val intent = Intent(this, StudentsListActivity::class.java)
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
             startActivity(intent)
         }
     }

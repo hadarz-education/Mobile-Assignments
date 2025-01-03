@@ -5,14 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentsListActivity">
+    tools:context=".StudentsRecyclerViewActivity">
 
-    <ListView
-        android:id="@+id/students_list_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/students_recycler_view"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,5 +26,4 @@
         android:layout_margin="16dp"
         android:contentDescription="Add Student"
         android:src="@android:drawable/ic_input_add" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
