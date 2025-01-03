@@ -25,6 +25,8 @@ class AddStudentActivity : AppCompatActivity() {
 
         val nameEditText: EditText = findViewById(R.id.add_student_activity_name_edit_text)
         val idEditText: EditText = findViewById(R.id.add_student_activity_id_edit_text)
+        val phoneEditText: EditText = findViewById(R.id.add_student_activity_phone_edit_text)
+        val addressEditText: EditText = findViewById(R.id.add_student_activity_address_edit_text)
 
         val savedMessageTextView: TextView = findViewById(R.id.add_student_activity_save_message_text_view)
 
