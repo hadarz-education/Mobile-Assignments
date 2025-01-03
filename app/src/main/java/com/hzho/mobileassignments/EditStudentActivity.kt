@@ -46,7 +46,7 @@ class EditStudentActivity : AppCompatActivity() {
             Model.shared.removeStudent(studentPosition)
             Toast.makeText(this, "Student deleted", Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -63,7 +63,7 @@ class EditStudentActivity : AppCompatActivity() {
                 Model.shared.updateStudent(studentPosition, updatedStudent)
                 Toast.makeText(this, "Student updated", Toast.LENGTH_SHORT).show()
 
-                val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "At lease one of the properties need to be filled", Toast.LENGTH_SHORT).show()

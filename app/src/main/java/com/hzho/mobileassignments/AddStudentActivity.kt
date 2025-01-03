@@ -63,7 +63,7 @@ class AddStudentActivity : AppCompatActivity() {
                 studentIdEditText.text.clear()
                 checkStatusCheckBox.isChecked = false
 
-                val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             } else {
                 // Show error message if fields are empty
