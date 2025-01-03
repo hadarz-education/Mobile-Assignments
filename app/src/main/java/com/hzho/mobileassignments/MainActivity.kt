@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // Set the click listener
         addStudentButton.setOnClickListener {
             // Create an Intent to navigate to StudentsListActivity
-            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            val intent = Intent(this, AddStudentActivity::class.java)
             startActivity(intent)
         }
     }
