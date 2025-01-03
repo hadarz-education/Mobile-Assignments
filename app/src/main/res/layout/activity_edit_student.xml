@@ -98,6 +98,21 @@
         app:layout_constraintEnd_toStartOf="@+id/student_details_image_view"
         app:layout_constraintStart_toEndOf="@+id/student_details_address_text_view" />
 
+    <CheckBox
+        android:id="@+id/student_check_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        android:text="Is Checked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/student_details_address_text_view" />
+
     <ImageView
         android:id="@+id/student_details_image_view"
         android:layout_width="150dp"

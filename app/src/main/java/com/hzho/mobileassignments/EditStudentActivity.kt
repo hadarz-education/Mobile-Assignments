@@ -1,8 +1,8 @@
 package com.hzho.mobileassignments
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +22,7 @@ class EditStudentActivity : AppCompatActivity() {
         val idEditText: EditText = findViewById(R.id.student_details_id_edit_text)
         val phoneEditText: EditText = findViewById(R.id.student_details_phone_edit_text)
         val addressEditText: EditText = findViewById(R.id.student_details_address_edit_text)
+        val checkStatusCheckBox: CheckBox = findViewById(R.id.student_check_status)
 
         nameEditText.setText(student?.name)
         idEditText.setText(student?.id)
@@ -40,9 +41,7 @@ class EditStudentActivity : AppCompatActivity() {
         deleteButton.setOnClickListener {
             Model.shared.removeStudent(studentPosition)
             Toast.makeText(this, "Student deleted", Toast.LENGTH_SHORT).show()
-
-            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
-            startActivity(intent)
+            finish()
         }
 
         saveButton.setOnClickListener {
@@ -50,15 +49,14 @@ class EditStudentActivity : AppCompatActivity() {
             val newStudentId = idEditText.text.toString().trim()
             val newStudentPhone = phoneEditText.text.toString().trim()
             val newStudentAddress = addressEditText.text.toString().trim()
+            val newStudentIsClass = checkStatusCheckBox.isChecked
 
-            if (newStudentName.isNotEmpty() || newStudentId.isNotEmpty() || newStudentPhone.isNotEmpty() || newStudentAddress.isNotEmpty()) {
-                val updatedStudent = Student(newStudentName, newStudentId, newStudentPhone, newStudentAddress, true)
+            if (newStudentName.isNotEmpty() && newStudentId.isNotEmpty() && newStudentPhone.isNotEmpty() && newStudentAddress.isNotEmpty()) {
+                val updatedStudent = Student(newStudentName, newStudentId, newStudentPhone, newStudentAddress, newStudentIsClass)
 
                 Model.shared.updateStudent(studentPosition, updatedStudent)
                 Toast.makeText(this, "Student updated", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
-                startActivity(intent)
+                finish() // Close the activity after saving
             } else {
                 Toast.makeText(this, "At lease one of the properties need to be filled", Toast.LENGTH_SHORT).show()
             }
