@@ -35,7 +35,7 @@ class AddStudentActivity : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
-            savedMessageTextView.text = "Name: ${nameEditText.text} ID: ${idEditText.text} is saved!!!..."
+            savedMessageTextView.text = "Name: ${nameEditText.text} ID: ${idEditText.text} PHONE: ${phoneEditText.text} ID: ${addressEditText.text} is saved!!!..."
         }
     }
 }
