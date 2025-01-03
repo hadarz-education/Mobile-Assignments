@@ -56,7 +56,6 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
             override fun onItemClick(position: Int) {
                 Log.d("TAG", "On click Activity listener on position $position")
                 navigateToStudentDetails(position)
-
             }
 
             override fun onItemClick(student: Student?) {
