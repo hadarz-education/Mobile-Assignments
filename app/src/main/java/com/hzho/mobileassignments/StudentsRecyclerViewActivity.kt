@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -65,6 +66,12 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
 
         recyclerView.adapter = adapter
 
+        val addStudentButton: Button = findViewById(R.id.students_list_add_student_button)
+
+        addStudentButton.setOnClickListener {
+            val intent = Intent(this, AddStudentActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     class StudentViewHolder(
