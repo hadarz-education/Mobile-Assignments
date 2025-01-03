@@ -7,18 +7,15 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.hzho.mobileassignments.model.Model
-import com.hzho.mobileassignments.model.Student
 
 class StudentDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student_details)
 
-        // Retrieve the passed student object
         val studentPosition = intent.getIntExtra("studentPosition", 0)
         val student = Model.shared.getStudentAtPosition(studentPosition)
 
-        // Initialize views
         val nameTextView: TextView = findViewById(R.id.student_details_name_text_view)
         val idTextView: TextView = findViewById(R.id.student_details_id_text_view)
         val phoneTextView: TextView = findViewById(R.id.student_details_phone_text_view)
@@ -26,7 +23,6 @@ class StudentDetailsActivity : AppCompatActivity() {
         val activeCheckBox: CheckBox = findViewById(R.id.student_details_active_check_box)
         val editButton: Button = findViewById(R.id.student_details_edit_button)
 
-        // Populate views with student data
         student?.let {
             nameTextView.text = "Name: ${it.name}"
             idTextView.text = "ID: ${it.id}"
@@ -34,11 +30,10 @@ class StudentDetailsActivity : AppCompatActivity() {
             addressTextView.text = "Address: ${it.address}"
         }
 
-        // Handle edit button click
         editButton.setOnClickListener {
-//            val intent = Intent(this, EditStudentActivity::class.java)
-//            intent.putExtra("student", student)
-//            startActivity(intent)
+            val intent = Intent(this, EditStudentActivity::class.java)
+            intent.putExtra("studentPosition", studentPosition)
+            startActivity(intent)
         }
     }
 }
