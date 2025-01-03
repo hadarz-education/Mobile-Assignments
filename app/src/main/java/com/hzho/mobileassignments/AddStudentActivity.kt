@@ -46,7 +46,7 @@ class AddStudentActivity : AppCompatActivity() {
 
 
             // Check if the input fields are not empty
-            if (studentName.isNotEmpty() && studentId.isNotEmpty()) {
+            if (studentName.isNotEmpty() && studentId.isNotEmpty() && studentPhone.isNotEmpty() && studentAddress.isNotEmpty()) {
 
                 // Get the selected radio button (Checked or Unchecked)
                 val selectedRadioButtonId = checkStatusGroup.checkedRadioButtonId
@@ -73,7 +73,7 @@ class AddStudentActivity : AppCompatActivity() {
                 startActivity(intent)
             } else {
                 // Show error message if fields are empty
-                Toast.makeText(this, "Please enter both name and ID", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please Make sure you filled all the details", Toast.LENGTH_SHORT).show()
             }
 
         }

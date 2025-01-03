@@ -22,14 +22,17 @@ class StudentDetailsActivity : AppCompatActivity() {
         val addressTextView: TextView = findViewById(R.id.student_details_address_text_view)
         val activeCheckBox: CheckBox = findViewById(R.id.student_details_active_check_box)
         val editButton: Button = findViewById(R.id.student_details_edit_button)
+        activeCheckBox.isEnabled = false
 
         student?.let {
             nameTextView.text = "name: ${it.name}"
             idTextView.text = "id: ${it.id}"
             phoneTextView.text = "phone: ${it.phone}"
             addressTextView.text = "address: ${it.address}"
-            activeCheckBox.text = "isChecked: ${it.isChecked}"
+            activeCheckBox.text = ""
+            activeCheckBox.isChecked = it.isChecked
         }
+
 
         editButton.setOnClickListener {
             val intent = Intent(this, EditStudentActivity::class.java)

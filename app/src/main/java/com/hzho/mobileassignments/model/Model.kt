@@ -32,4 +32,12 @@ class Model private constructor() {
             null
         }
     }
+
+    fun removeStudent(position: Int) {
+        students.removeAt(position)
+    }
+
+    fun updateStudent(position: Int, updatedStudent: Student) {
+        students[position] = updatedStudent
+    }
 }
