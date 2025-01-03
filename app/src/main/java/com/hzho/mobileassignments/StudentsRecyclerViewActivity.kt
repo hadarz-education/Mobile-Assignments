@@ -51,15 +51,6 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
         recyclerView.layoutManager = layoutManager
 
         val adapter = StudentsRecyclerAdapter(students)
-//        // Reference to RecyclerView
-//        val studentsRecyclerView: RecyclerView = findViewById(R.id.students_recycler_view)
-//
-//        // Set the LayoutManager for the RecyclerView
-//        studentsRecyclerView.layoutManager = LinearLayoutManager(this)
-//
-//        // Set the adapter with the students list from StudentRepository
-//        val adapter = StudentsAdapter(StudentRepository.students)
-//        studentsRecyclerView.adapter = adapter
 
         adapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int) {
