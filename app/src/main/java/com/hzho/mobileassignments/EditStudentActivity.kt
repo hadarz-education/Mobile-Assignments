@@ -49,9 +49,10 @@ class EditStudentActivity : AppCompatActivity() {
             val newStudentId = idEditText.text.toString().trim()
             val newStudentPhone = phoneEditText.text.toString().trim()
             val newStudentAddress = addressEditText.text.toString().trim()
+            val newStudentIsClass = checkStatusCheckBox.isChecked
 
             if (newStudentName.isNotEmpty() && newStudentId.isNotEmpty() && newStudentPhone.isNotEmpty() && newStudentAddress.isNotEmpty()) {
-                val updatedStudent = Student(newStudentName, newStudentId, newStudentPhone, newStudentAddress, true)
+                val updatedStudent = Student(newStudentName, newStudentId, newStudentPhone, newStudentAddress, newStudentIsClass)
 
                 Model.shared.updateStudent(studentPosition, updatedStudent)
                 Toast.makeText(this, "Student updated", Toast.LENGTH_SHORT).show()
