@@ -19,11 +19,14 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val addStudentButton: Button = findViewById(R.id.main_acitivity_add_student_button)
-        addStudentButton.setOnClickListener {
-            val intent = Intent(this, AddStudentActivity::class.java)
-            startActivity(intent)
-        }
+        val intent = Intent(this, StudentsListActivity::class.java)
+        startActivity(intent)
+
+//        val addStudentButton: Button = findViewById(R.id.main_acitivity_add_student_button)
+//        addStudentButton.setOnClickListener {
+//            val intent = Intent(this, StudentsListActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 
 }

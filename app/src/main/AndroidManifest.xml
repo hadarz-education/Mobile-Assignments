@@ -16,7 +16,7 @@
             android:name=".AddStudentActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentListActivity"
+            android:name=".StudentsListActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
