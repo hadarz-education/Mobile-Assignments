@@ -98,7 +98,6 @@
         app:layout_constraintEnd_toStartOf="@+id/student_details_image_view"
         app:layout_constraintStart_toEndOf="@+id/student_details_address_text_view" />
 
-
     <CheckBox
         android:id="@+id/student_check_status"
         android:layout_width="wrap_content"
