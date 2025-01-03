@@ -24,10 +24,11 @@ class StudentDetailsActivity : AppCompatActivity() {
         val editButton: Button = findViewById(R.id.student_details_edit_button)
 
         student?.let {
-            nameTextView.text = "Name: ${it.name}"
-            idTextView.text = "ID: ${it.id}"
-            phoneTextView.text = "Phone: ${it.phone}"
-            addressTextView.text = "Address: ${it.address}"
+            nameTextView.text = "name: ${it.name}"
+            idTextView.text = "id: ${it.id}"
+            phoneTextView.text = "phone: ${it.phone}"
+            addressTextView.text = "address: ${it.address}"
+            activeCheckBox.text = "isChecked: ${it.isChecked}"
         }
 
         editButton.setOnClickListener {
