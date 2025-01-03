@@ -21,9 +21,11 @@
         android:id="@+id/fab_add_student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:contentDescription="Add Student"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="325dp"
+        tools:layout_editor_absoluteY="649dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
