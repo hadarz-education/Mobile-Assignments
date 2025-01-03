@@ -32,8 +32,6 @@ class AddStudentActivity : AppCompatActivity() {
         val addressEditText: EditText = findViewById(R.id.add_student_activity_address_edit_text)
         val checkStatusGroup: RadioGroup = findViewById(R.id.check_status_group)
 
-        val savedMessageTextView: TextView = findViewById(R.id.add_student_activity_save_message_text_view)
-
         cancelButton.setOnClickListener {
             finish()
         }
