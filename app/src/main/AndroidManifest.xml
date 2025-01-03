@@ -18,9 +18,7 @@
         <activity
             android:name=".StudentsRecyclerViewActivity"
             android:exported="false" />
-        <activity
-            android:name=".AddStudentActivity"
-            android:exported="false" />
+        <activity android:name=".AddStudentActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
