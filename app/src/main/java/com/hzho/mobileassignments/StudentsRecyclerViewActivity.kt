@@ -1,5 +1,6 @@
 package com.hzho.mobileassignments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,6 +26,12 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
 
     private var students: MutableList<Student>? = null
 
+    private fun navigateToStudentDetails(studentPosition: Int) {
+        val intent = Intent(this, StudentDetailsActivity::class.java)
+        intent.putExtra("studentPosition", studentPosition)
+        startActivity(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -47,6 +54,8 @@ class StudentsRecyclerViewActivity : AppCompatActivity() {
         adapter.listener = object : OnItemClickListener {
             override fun onItemClick(position: Int) {
                 Log.d("TAG", "On click Activity listener on position $position")
+                navigateToStudentDetails(position)
+
             }
 
             override fun onItemClick(student: Student?) {

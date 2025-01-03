@@ -12,10 +12,19 @@ class Model private constructor() {
             val student = Student(
                 name = "Name $i",
                 id = "Student ID: $i",
-                avatarUrl = "",
+                phone = "Phone",
+                address = "address",
                 isChecked = false
             )
             students.add(student)
+        }
+    }
+
+    fun getStudentAtPosition(position: Int): Student? {
+        return if (position in 0 until students.size) {
+            students[position]
+        } else {
+            null
         }
     }
 }
