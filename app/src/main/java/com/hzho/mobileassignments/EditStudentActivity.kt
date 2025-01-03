@@ -2,6 +2,7 @@ package com.hzho.mobileassignments
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class EditStudentActivity : AppCompatActivity() {
         val idEditText: EditText = findViewById(R.id.student_details_id_edit_text)
         val phoneEditText: EditText = findViewById(R.id.student_details_phone_edit_text)
         val addressEditText: EditText = findViewById(R.id.student_details_address_edit_text)
+        val checkStatusCheckBox: CheckBox = findViewById(R.id.student_check_status)
 
         nameEditText.setText(student?.name)
         idEditText.setText(student?.id)
