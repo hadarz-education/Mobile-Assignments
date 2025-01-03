@@ -1,5 +1,6 @@
 package com.hzho.mobileassignments
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -38,7 +39,8 @@ class AddStudentActivity : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
-            savedMessageTextView.text = "Name: ${nameEditText.text} ID: ${idEditText.text} PHONE: ${phoneEditText.text} ID: ${addressEditText.text} is saved!!!..."
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            startActivity(intent)
         }
     }
 }
