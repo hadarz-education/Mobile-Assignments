@@ -1,5 +1,6 @@
 package com.hzho.mobileassignments
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -39,7 +40,9 @@ class EditStudentActivity : AppCompatActivity() {
         deleteButton.setOnClickListener {
             Model.shared.removeStudent(studentPosition)
             Toast.makeText(this, "Student deleted", Toast.LENGTH_SHORT).show()
-            finish()
+
+            val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+            startActivity(intent)
         }
 
         saveButton.setOnClickListener {
@@ -48,12 +51,14 @@ class EditStudentActivity : AppCompatActivity() {
             val newStudentPhone = phoneEditText.text.toString().trim()
             val newStudentAddress = addressEditText.text.toString().trim()
 
-            if (newStudentName.isNotEmpty() && newStudentId.isNotEmpty() && newStudentPhone.isNotEmpty() && newStudentAddress.isNotEmpty()) {
+            if (newStudentName.isNotEmpty() || newStudentId.isNotEmpty() || newStudentPhone.isNotEmpty() || newStudentAddress.isNotEmpty()) {
                 val updatedStudent = Student(newStudentName, newStudentId, newStudentPhone, newStudentAddress, true)
 
                 Model.shared.updateStudent(studentPosition, updatedStudent)
                 Toast.makeText(this, "Student updated", Toast.LENGTH_SHORT).show()
-                finish() // Close the activity after saving
+
+                val intent = Intent(this, StudentsRecyclerViewActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(this, "At lease one of the properties need to be filled", Toast.LENGTH_SHORT).show()
             }

@@ -1,7 +1,10 @@
 package com.hzho.mobileassignments.model
 
+import kotlin.random.Random
+
 class Model private constructor() {
     val students: MutableList<Student> = ArrayList()
+    private val names = listOf("Hadar", "Hila")
 
     companion object {
         val shared = Model()
@@ -9,11 +12,14 @@ class Model private constructor() {
 
     init {
         for (i in 0..5) {
+            val randomName = names.random()
+            val randomId = Random.nextInt(10000000, 99999999)
+
             val student = Student(
-                name = "Name $i",
-                id = "Student ID: $i",
-                phone = "Phone",
-                address = "address",
+                name = randomName,
+                id = "$randomId",
+                phone = "",
+                address = "",
                 isChecked = false
             )
 
@@ -38,6 +44,12 @@ class Model private constructor() {
     }
 
     fun updateStudent(position: Int, updatedStudent: Student) {
-        students[position] = updatedStudent
+        val student = students[position]
+
+        student.name = updatedStudent.name
+        student.id = updatedStudent.id
+        student.phone = updatedStudent.phone
+        student.address = updatedStudent.address
+        student.isChecked = updatedStudent.isChecked
     }
 }

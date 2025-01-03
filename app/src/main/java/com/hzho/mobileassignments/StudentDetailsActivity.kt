@@ -33,7 +33,6 @@ class StudentDetailsActivity : AppCompatActivity() {
             activeCheckBox.isChecked = it.isChecked
         }
 
-
         editButton.setOnClickListener {
             val intent = Intent(this, EditStudentActivity::class.java)
             intent.putExtra("studentPosition", studentPosition)
